@@ -1,0 +1,60 @@
+#1- Crear una función que muestre por pantalla el número que recibe como parámetro.
+def most_num(num : int)-> None:
+    print(num)
+
+#2-Crear una función que permita determinar si un número es par o no. La función retorna “True” en caso afirmativo y 
+#“False” en caso contrario. Probar en el programa principal realizando la invocación o llamada.
+def par_impar(num : int)-> bool:
+    if num % 2 == 0:
+        return True
+    else:
+        return False
+
+#3- Especializar la función del punto 1 para que valide el número
+#en un rango determinado pasado por parámetro “desde”-“hasta”
+def par_impar_parametros(num : int, desde : int, hasta : int):
+    if num < desde or num > hasta:
+        print('el numero esta afuera de los parametros')
+    else:
+        if num % 2 == 0:
+            print(True)
+        else:
+            print(False)
+
+#4- Realizar un programa en donde se puedan utilizar los prototipos de la función Restar en sus 4 combinaciones.
+#restar1(int, int)->int:
+#restar2()->int: 
+#restar3(int, int): 
+#restar4():'''
+def restar_1(num_1: int, num_2: int)-> int:
+    return num_1 - num_2
+
+def restar_2()-> int:
+    return 20 - 5
+
+def restar_3(num_1: int, num_2: int):
+    return num_1 - num_2
+
+def restar_4():
+    return 20 - 5
+
+
+#5- Realizar un programa que: asigne a la variable numero1 un valor solicitado al usuario, valide el mismo entre 10 y 100, realice un descuento del 5% a dicho valor a través de una función llamada realizarDescuento(). Mostrar el resultado por pantalla. Atención: pueden reutilizarse funciones ya creadas.
+contador = 0 
+def realizarDescuento(num : int):
+    return num -(num * 5/100)
+
+num_1 =int(input('numero entre el 10 y 100: '))
+num_2 =int(input('numero entre el 10 y 100: '))
+while num_1 < 10 or num_1 > 100:
+    contador +=1
+
+    if (num_1 < 10 or num_1 > 100) and contador < 3:
+        num_1 = int(input('error, ingrese un numero entre el 10 y el 100: '))
+    elif num_1 > 10 and num_1 < 100 and contador < 3:
+        print(realizarDescuento(num_1))
+    else:
+        break
+
+if num_1 > 10 and num_1 < 100 and contador < 3:
+    print(realizarDescuento(num_1))
